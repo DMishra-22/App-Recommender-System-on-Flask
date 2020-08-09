@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+  <META charset = "UTF-8">
+  <TITLE> App Recommender </TITLE>
+</HEAD>
+
+<BODY>
+	<DIV>
+		<CENTER>
+		<H1> App Recommender System </H1>
+
+     		<!-- Receiving Input to our ML Engine -->
+    		<FORM action = "{{ url_for('recommend')}}" method = "post">
+    		<INPUT type = "text" name = "input" placeholder = "App Name" required = "required" />
+        	<BUTTON type = "submit"> Find Recommendations </BUTTON>
+    		</FORM>
+
+   		<BR>
+   		<BR>
+
+   		Recommended Apps are:
+   		<BR>
+   		<BR>
+
+		<!-- Showing Recommendations on HTML GUI -->
+   		<DIV>
+    			{{ recommendations_table | safe }}
+   		</DIV>
+	</DIV>
+</BODY>
+
+</HTML>
